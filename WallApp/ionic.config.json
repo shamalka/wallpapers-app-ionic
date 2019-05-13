@@ -1,5 +1,7 @@
 {
   "name": "WallApp",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

@@ -6,87 +6,24 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content *ngIf="images">
     <ion-grid>
-        <ion-row>
-          <ion-col>
-            <ion-card (click)="onClick()">
-              <ion-card-header>
-                <ion-card-subtitle>Wallpaper By Admin</ion-card-subtitle>
-              </ion-card-header>
-              <img src="https://icdn6.digitaltrends.com/image/justice-league-batman-720x720.jpg" alt="">
+        <ion-row >
+          <ion-col >
+            <ion-card *ngFor="let image of images" >
+              <div (click)="onClick(image.id)">
+                  <ion-card-header>
+                      <ion-card-subtitle>Wallpaper By {{ image.author }}</ion-card-subtitle>
+                    </ion-card-header>
+                    <img src="{{ image.download_url }}" alt="">
+              </div>  
               <ion-card-content>
-                Keep close to Nature's heart... and break clear away, once in awhile,
-                and climb a mountain or spend a week in the woods. Wash your spirit clean.
-              </ion-card-content>
-            </ion-card>
-          </ion-col>
-          <ion-col>
-            <ion-card>
-              <ion-card-header>
-                <ion-card-subtitle>Wallpaper By Admin</ion-card-subtitle>
-              </ion-card-header>
-              <img src="https://icdn6.digitaltrends.com/image/justice-league-batman-720x720.jpg" alt="">
-              <ion-card-content>
-                Keep close to Nature's heart... and break clear away, once in awhile,
-                and climb a mountain or spend a week in the woods. Wash your spirit clean.
+                  <ion-button color="primary" href="{{ image.download_url }}">Download</ion-button>
               </ion-card-content>
             </ion-card>
           </ion-col>
         </ion-row>
     
-        <ion-row>
-          <ion-col>
-            <ion-card>
-              <ion-card-header>
-                <ion-card-subtitle>Wallpaper By Admin</ion-card-subtitle>
-              </ion-card-header>
-              <img src="https://icdn6.digitaltrends.com/image/justice-league-batman-720x720.jpg" alt="">
-              <ion-card-content>
-                Keep close to Nature's heart... and break clear away, once in awhile,
-                and climb a mountain or spend a week in the woods. Wash your spirit clean.
-              </ion-card-content>
-            </ion-card>
-          </ion-col>
-          <ion-col>
-            <ion-card>
-              <ion-card-header>
-                <ion-card-subtitle>Wallpaper By Admin</ion-card-subtitle>
-              </ion-card-header>
-              <img src="https://icdn6.digitaltrends.com/image/justice-league-batman-720x720.jpg" alt="">
-              <ion-card-content>
-                Keep close to Nature's heart... and break clear away, once in awhile,
-                and climb a mountain or spend a week in the woods. Wash your spirit clean.
-              </ion-card-content>
-            </ion-card>
-          </ion-col>
-        </ion-row>
-    
-        <ion-row>
-          <ion-col>
-            <ion-card>
-              <ion-card-header>
-                <ion-card-subtitle>Wallpaper By Admin</ion-card-subtitle>
-              </ion-card-header>
-              <img src="https://icdn6.digitaltrends.com/image/justice-league-batman-720x720.jpg" alt="">
-              <ion-card-content>
-                Keep close to Nature's heart... and break clear away, once in awhile,
-                and climb a mountain or spend a week in the woods. Wash your spirit clean.
-              </ion-card-content>
-            </ion-card>
-          </ion-col>
-          <ion-col>
-            <ion-card>
-              <ion-card-header>
-                <ion-card-subtitle>Wallpaper By Admin</ion-card-subtitle>
-              </ion-card-header>
-              <img src="https://icdn6.digitaltrends.com/image/justice-league-batman-720x720.jpg" alt="">
-              <ion-card-content>
-                Keep close to Nature's heart... and break clear away, once in awhile,
-                and climb a mountain or spend a week in the woods. Wash your spirit clean.
-              </ion-card-content>
-            </ion-card>
-          </ion-col>
-        </ion-row>
+        
       </ion-grid>
 </ion-content>
